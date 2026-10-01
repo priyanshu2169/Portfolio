@@ -6,7 +6,7 @@ export const personal = {
   location: "Meerut, Uttar Pradesh, India",
   email: "priyanshutyagi0910@gmail.com",
   phone: "+91 6377293622",
-  resume: "/resume.pdf",
+  resume: `${import.meta.env.BASE_URL}resume.pdf`,
   socials: {
     linkedin: "https://linkedin.com/in/priyanshutyagi3110",
     github: "https://github.com/priyanshu2169",
