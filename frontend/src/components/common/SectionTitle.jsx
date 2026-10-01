@@ -1,12 +1,9 @@
 import Reveal from "./Reveal";
 
-export default function SectionTitle({ label, title }) {
+export default function SectionTitle({ title }) {
   return (
     <Reveal>
       <div style={{ marginBottom: 48 }}>
-        <p style={{ fontFamily: "JetBrains Mono, monospace", color: "var(--accent-2)", fontSize: "0.85rem", marginBottom: 8 }}>
-          {label}
-        </p>
         <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800 }}>
           {title}
         </h2>
