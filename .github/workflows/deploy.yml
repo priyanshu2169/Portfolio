@@ -19,15 +19,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Find project folder
+        id: find
+        run: |
+          if [ -f package.json ]; then
+            echo "dir=." >> $GITHUB_OUTPUT
+          else
+            echo "dir=frontend" >> $GITHUB_OUTPUT
+          fi
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
+          node-version: 22
+
+      - name: Install dependencies
+        working-directory: ${{ steps.find.outputs.dir }}
+        run: npm install
+
+      - name: Build
+        working-directory: ${{ steps.find.outputs.dir }}
+        run: npm run build
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ steps.find.outputs.dir }}/dist
 
   deploy:
     needs: build
