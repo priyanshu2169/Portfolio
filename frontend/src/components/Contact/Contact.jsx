@@ -43,7 +43,7 @@ export default function Contact() {
                 <div key={item.label} className="contact-item card">
                   <div className="contact-icon">{item.icon}</div>
                   <div>
-                    <span>{item.label}</span>
+                    
                     {item.href ? (
                       <a href={item.href}>{item.value}</a>
                     ) : (

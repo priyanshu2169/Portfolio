@@ -26,7 +26,7 @@ export default function About() {
                 {about.stats.map((s) => (
                   <div key={s.label} className="stat card">
                     <h3 className="gradient-text">{s.value}</h3>
-                    <span>{s.label}</span>
+                    
                   </div>
                 ))}
               </div>
